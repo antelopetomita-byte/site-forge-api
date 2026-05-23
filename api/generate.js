@@ -8,8 +8,8 @@ export default async function handler(req, res) {
 
   try {
     const body = req.body;
-    // モデル名を強制的に正しいものに上書き
     body.model = 'claude-sonnet-4-5';
+    body.max_tokens = 16000;
 
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
